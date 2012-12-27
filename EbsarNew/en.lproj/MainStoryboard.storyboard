@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6rN-Hq-X3U">
+                                <items>
+                                    <navigationItem title="ابصر" id="Act-sE-hTA"/>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V39-g2-H2M">
+                                <items>
+                                    <barButtonItem enabled="NO" title="غرد" width="70" id="F9c-gc-ycq">
+                                        <connections>
+                                            <action selector="tweetButton:" destination="2" id="02c-W9-YHG"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="GZt-z0-whz"/>
+                                    <barButtonItem title="انقر لإلتقاط الصورة" id="h58-Gu-e8t">
+                                        <connections>
+                                            <action selector="captureImage:" destination="2" id="S3l-8I-NWg"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Gdz-JK-Gin"/>
+                                </items>
+                            </toolbar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ua-zn-5lE">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="V39-g2-H2M" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="7xl-Un-z7y"/>
+                            <constraint firstItem="V39-g2-H2M" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="8CD-3h-HdH"/>
+                            <constraint firstItem="V39-g2-H2M" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="QZ7-eC-Ma3"/>
+                            <constraint firstItem="6rN-Hq-X3U" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="R79-x4-Bxy"/>
+                            <constraint firstItem="V39-g2-H2M" firstAttribute="top" secondItem="9ua-zn-5lE" secondAttribute="bottom" type="default" id="Vs6-KS-eJk"/>
+                            <constraint firstItem="9ua-zn-5lE" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="ga4-yF-Iym"/>
+                            <constraint firstItem="9ua-zn-5lE" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="gky-Yw-nli"/>
+                            <constraint firstItem="6rN-Hq-X3U" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="uMX-1a-eb3"/>
+                            <constraint firstItem="6rN-Hq-X3U" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="vcy-5F-BWK"/>
+                            <constraint firstItem="9ua-zn-5lE" firstAttribute="top" secondItem="6rN-Hq-X3U" secondAttribute="bottom" type="default" id="xn8-Ke-AQl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Button_capture" destination="h58-Gu-e8t" id="WoY-jy-cqW"/>
+                        <outlet property="buttonTweet" destination="F9c-gc-ycq" id="6Dt-zj-FJ3"/>
+                        <outlet property="tweetButton" destination="V39-g2-H2M" id="6J7-3I-9ru"/>
+                        <outlet property="webView" destination="9ua-zn-5lE" id="PdF-1G-m12"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
