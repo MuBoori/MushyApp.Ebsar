@@ -19,7 +19,7 @@
                             </navigationBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V39-g2-H2M">
                                 <items>
-                                    <barButtonItem enabled="NO" title="غرد" width="70" id="F9c-gc-ycq">
+                                    <barButtonItem enabled="NO" title="ارسلها كتغريدة" id="F9c-gc-ycq">
                                         <connections>
                                             <action selector="tweetButton:" destination="2" id="02c-W9-YHG"/>
                                         </connections>
@@ -30,7 +30,6 @@
                                             <action selector="captureImage:" destination="2" id="S3l-8I-NWg"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Gdz-JK-Gin"/>
                                 </items>
                             </toolbar>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ua-zn-5lE">
@@ -62,6 +61,23 @@
             </objects>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="captureImage:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="doListen:"/>
+                <relationship kind="action" name="tweetButton:"/>
+                <relationship kind="outlet" name="Button_capture" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="buttonTweet" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="tweetButton" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

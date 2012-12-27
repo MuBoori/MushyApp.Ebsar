@@ -32,9 +32,11 @@
 {
     [super viewDidLoad];
     [self initTwitter];
-
-    /**
-    NSString *twUrl = @"https://twitter.com/";
+    while (_twitterAccount == nil) {
+        
+    }
+    
+    NSString *twUrl = @"http://mobile.twitter.com/";
     NSDictionary *tempDict = [[NSMutableDictionary alloc] initWithDictionary:
                               [_twitterAccount dictionaryWithValuesForKeys:[NSArray arrayWithObject:@"username"]]];
     NSString * username = [tempDict objectForKey:@"username"];
@@ -44,8 +46,8 @@
     NSURL *url = [NSURL URLWithString:fullUrl];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [_webView loadRequest:requestObj];
-    [_tweetButton setEnabled:NO];
-     */
+    //[_tweetButton setEnabled:NO];
+    
 	// Do any additional setup after loading the view, typically from a nib.
     
 }
@@ -53,6 +55,13 @@
 /**
  Controll the action when the user click on a capture button
  */
+- (IBAction)listen:(id)sender {
+}
+
+- (IBAction)doListen:(id)sender {
+    [self playAudio];
+}
+
 - (IBAction)captureImage:(UIBarButtonItem*)sender {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"مصدر الصورة"
                                                     message:@"اختر مصدر الصورة"
@@ -128,7 +137,7 @@
     {
         SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         [tweetSheet addImage:_selectedImage];
-        [tweetSheet setInitialText:_tweetText];
+        [tweetSheet setInitialText:@"#بطولة_التطبيقات"];
         [tweetSheet addURL:[NSURL URLWithString:_urlString]];
         [self presentViewController:tweetSheet animated:YES completion:nil];
     }
@@ -182,7 +191,7 @@ Capture the user input when the user select the the type of camera source
         if(buttonIndex == 1)
         {
             // Start Recording
-            NSLog(@"it's recording");
+            //NSLog(@"it's recording");
             [self recordAudio];
             
             //show alart
@@ -213,8 +222,8 @@ Capture the user input when the user select the the type of camera source
                 [audioPlayer stop];
             }
             
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"حفظ المقطع الصوي"
-                                                            message:@"احفظ المقطع الصوتي"
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"حفظ المقطع الصوتي"
+                                                            message:nil
                                                            delegate:self
                                                   cancelButtonTitle:@"حفظ مقطع الصوتي"
                                                   otherButtonTitles:@"إستمع إلى المقطع",nil];
@@ -235,16 +244,20 @@ Capture the user input when the user select the the type of camera source
             [self playAudio];
             
             //copy the same one tag 4
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"حفظ المقطع الصوي"
-                                                            message:@"احفظ المقطع الصوتي"
+    
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"حفظ المقطع الصوتي"
+                                                            message:nil
                                                            delegate:self
                                                   cancelButtonTitle:@"حفظ مقطع الصوتي"
                                                   otherButtonTitles:@"إستمع إلى المقطع",nil];
             alert.tag = 4;
             [alert show];
+            
+
 
             
         }
+            
         
         if (buttonIndex == 0) {
             [self uploadAudio];
@@ -277,7 +290,7 @@ Capture the user input when the user select the the type of camera source
 
 - (void) afterImageIsPicked
 {
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"سجل مقطع صوتي" message:@"اضغط علي زر التسجيل وتكلم" delegate:self cancelButtonTitle:@"انهاء" otherButtonTitles:@"سجل مقطع صوتي", nil];
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"سجل مقطع صوتي" message:nil delegate:self cancelButtonTitle:@"انهاء" otherButtonTitles:@"سجل مقطع صوتي", nil];
     alert.tag = 2;
     [alert show];
 
@@ -321,6 +334,15 @@ Capture the user input when the user select the the type of camera source
     }
     
     [self.audioRecorder record];
+    
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    NSError *err = nil;
+    [audioSession setCategory :AVAudioSessionCategoryPlayAndRecord error:&err];
+    
+    UInt32 audioRouteOverride = kAudioSessionOverrideAudioRoute_Speaker;
+    AudioSessionSetProperty (kAudioSessionProperty_OverrideAudioRoute,
+                             sizeof(audioRouteOverride),&audioRouteOverride);
+    
 }
 
 -(void) playAudio
@@ -372,7 +394,7 @@ Capture the user input when the user select the the type of camera source
                            shareViewControllerWithFileURL:trackURL
                            completionHandler:handler];
     [shareViewController setTitle:@"Sound Clip"];
-    //[shareViewController setCoverImage:_selectedImage];
+    [shareViewController setCoverImage:_selectedImage];
 
     [shareViewController setPrivate:NO];
     [shareViewController setDelegate:self];

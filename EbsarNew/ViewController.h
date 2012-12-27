@@ -45,6 +45,8 @@
 //@property (weak, nonatomic) IBOutlet UIBarButtonItem *tweetIt;
 @property (weak, nonatomic) IBOutlet UIToolbar *tweetButton;
 
+- (IBAction)doListen:(id)sender;
+
 - (IBAction)captureImage:(UIBarButtonItem*)sender;
 - (void) afterImageIsPicked;
 - (void) recordAudio;

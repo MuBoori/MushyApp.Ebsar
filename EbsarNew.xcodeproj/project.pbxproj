@@ -32,6 +32,9 @@
 		DDB12DA1168BC66B008DE71D /* libSoundCloudAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB12D93168BC654008DE71D /* libSoundCloudAPI.a */; };
 		DDB12DA2168BC66B008DE71D /* libSoundCloudUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB12D85168BC64A008DE71D /* libSoundCloudUI.a */; };
 		DDB12DA5168BC751008DE71D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB12DA4168BC751008DE71D /* QuartzCore.framework */; };
+		DDBB41C7168C7C5100F8C6B3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDBB41C6168C7C5100F8C6B3 /* AudioToolbox.framework */; };
+		DDBB41C9168C82E600F8C6B3 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DDBB41C8168C82E600F8C6B3 /* logo.png */; };
+		DDBB41CB168C8D1500F8C6B3 /* SoundCloud.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DDBB41CA168C8D1500F8C6B3 /* SoundCloud.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,7 +140,7 @@
 
 /* Begin PBXFileReference section */
 		DD0D55D6168C2C68001D24E7 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
-		DDB12C2C168B6752008DE71D /* EbsarNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EbsarNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDB12C2C168B6752008DE71D /* ابصر.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ابصر.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB12C30168B6752008DE71D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DDB12C32168B6752008DE71D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DDB12C34168B6752008DE71D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -168,6 +171,9 @@
 		DDB12D7C168BC649008DE71D /* SoundCloudUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SoundCloudUI.xcodeproj; path = CocoaSoundCloudUI/SoundCloudUI.xcodeproj; sourceTree = "<group>"; };
 		DDB12D88168BC653008DE71D /* SoundCloudAPI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SoundCloudAPI.xcodeproj; path = CocoaSoundCloudAPI/SoundCloudAPI.xcodeproj; sourceTree = "<group>"; };
 		DDB12DA4168BC751008DE71D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DDBB41C6168C7C5100F8C6B3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		DDBB41C8168C82E600F8C6B3 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		DDBB41CA168C8D1500F8C6B3 /* SoundCloud.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SoundCloud.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDBB41C7168C7C5100F8C6B3 /* AudioToolbox.framework in Frameworks */,
 				DD0D55D7168C2C68001D24E7 /* Accounts.framework in Frameworks */,
 				DDB12DA5168BC751008DE71D /* QuartzCore.framework in Frameworks */,
 				DDB12D9E168BC66B008DE71D /* libJSONKit.a in Frameworks */,
@@ -201,6 +208,7 @@
 		DDB12C21168B6752008DE71D = {
 			isa = PBXGroup;
 			children = (
+				DDBB41C8168C82E600F8C6B3 /* logo.png */,
 				DDB12D05168BB0BD008DE71D /* Resources */,
 				DDB12CA2168BA553008DE71D /* Workshop */,
 				DDB12C36168B6752008DE71D /* EbsarNew */,
@@ -212,7 +220,7 @@
 		DDB12C2D168B6752008DE71D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DDB12C2C168B6752008DE71D /* EbsarNew.app */,
+				DDB12C2C168B6752008DE71D /* ابصر.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -220,6 +228,7 @@
 		DDB12C2F168B6752008DE71D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DDBB41C6168C7C5100F8C6B3 /* AudioToolbox.framework */,
 				DD0D55D6168C2C68001D24E7 /* Accounts.framework */,
 				DDB12DA4168BC751008DE71D /* QuartzCore.framework */,
 				DDB12CC5168BAB81008DE71D /* Security.framework */,
@@ -278,6 +287,7 @@
 		DDB12D05168BB0BD008DE71D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DDBB41CA168C8D1500F8C6B3 /* SoundCloud.bundle */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -348,7 +358,7 @@
 			);
 			name = EbsarNew;
 			productName = EbsarNew;
-			productReference = DDB12C2C168B6752008DE71D /* EbsarNew.app */;
+			productReference = DDB12C2C168B6752008DE71D /* ابصر.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -476,6 +486,8 @@
 				DDB12C45168B6752008DE71D /* Default@2x.png in Resources */,
 				DDB12C47168B6752008DE71D /* Default-568h@2x.png in Resources */,
 				DDB12C4A168B6752008DE71D /* MainStoryboard.storyboard in Resources */,
+				DDBB41C9168C82E600F8C6B3 /* logo.png in Resources */,
+				DDBB41CB168C8D1500F8C6B3 /* SoundCloud.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,7 +643,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ابصر";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -660,7 +672,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ابصر";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
