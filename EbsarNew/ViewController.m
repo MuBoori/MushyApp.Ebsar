@@ -45,7 +45,7 @@
     NSLog(@"%@",fullUrl);
     NSURL *url = [NSURL URLWithString:fullUrl];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    [_webView loadRequest:requestObj];
+    //[_webView loadRequest:requestObj];
     //[_tweetButton setEnabled:NO];
     
 	// Do any additional setup after loading the view, typically from a nib.
@@ -371,6 +371,9 @@ Capture the user input when the user select the the type of camera source
     }
 }
 
+/**
+Upload an image
+ */
 - (void) uploadAudio
 {
     NSURL *trackURL = self.audioRecorder.url;
@@ -414,6 +417,9 @@ Capture the user input when the user select the the type of camera source
 }
 
 
+/**
+ this method execute and call social platform. see tweetThis
+ */
 - (IBAction)tweetButton:(id)sender {
     [self tweetThis];
 }
